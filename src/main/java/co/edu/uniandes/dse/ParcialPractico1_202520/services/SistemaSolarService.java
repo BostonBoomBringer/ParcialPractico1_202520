@@ -1,6 +1,6 @@
 package co.edu.uniandes.dse.ParcialPractico1_202520.services;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import co.edu.uniandes.dse.ParcialPractico1_202520.entities.SistemaSolar;
 import co.edu.uniandes.dse.ParcialPractico1_202520.exceptions.IllegalOperationException;
 import co.edu.uniandes.dse.ParcialPractico1_202520.repositories.SistemaSolarRepository;
@@ -13,7 +13,7 @@ public class SistemaSolarService {
     @Autowired
     private SistemaSolarRepository sistemaSolarRepository;
 
-    public SistemaSolar createSistemaSolar(SistemaSolar sistemaSolar) throws Exception {
+    public SistemaSolar createSistemaSolar(SistemaSolar sistemaSolar) throws IllegalOperationException {
         //Regla nombre < 31 caracteres
         if (sistemaSolar.getNombre() == null || sistemaSolar.getNombre().length() >= 31) {
             throw new IllegalOperationException("El nombre del sistema solar debe tener menos de 31 caracteres.");

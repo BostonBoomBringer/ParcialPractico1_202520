@@ -9,7 +9,9 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
 @Data
 @Entity

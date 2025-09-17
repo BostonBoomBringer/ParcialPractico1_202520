@@ -2,7 +2,6 @@ package co.edu.uniandes.dse.ParcialPractico1_202520.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import co.edu.uniandes.dse.ParcialPractico1_202520.entities.PlanetaEntity;
 import co.edu.uniandes.dse.ParcialPractico1_202520.exceptions.IllegalOperationException;
 import co.edu.uniandes.dse.ParcialPractico1_202520.repositories.PlanetaRepository;
@@ -13,7 +12,7 @@ public class PlanetaService {
     @Autowired
     private PlanetaRepository planetaRepository;
     
-    public PlanetaEntity createPlaneta(PlanetaEntity planeta) throws Exception {
+    public PlanetaEntity createPlaneta(PlanetaEntity planeta) throws IllegalOperationException {
         //Regla El nombre debe terminar en número romano 1, 2 o 3
         if (planeta.getNombre() == null || 
             !(planeta.getNombre().endsWith("I") || planeta.getNombre().endsWith("II") || planeta.getNombre().endsWith("III"))) {
