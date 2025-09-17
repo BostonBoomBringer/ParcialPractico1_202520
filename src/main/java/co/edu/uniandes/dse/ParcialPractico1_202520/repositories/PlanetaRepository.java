@@ -5,7 +5,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import co.edu.uniandes.dse.ParcialPractico1_202520.entities.PlanetaEntity;
+import co.edu.uniandes.dse.ParcialPractico1_202520.entities.SistemaSolar;
 
 public interface PlanetaRepository extends JpaRepository <PlanetaEntity, Long> {
-    
+    List<SistemaSolar> findByNombre(String nombre);
+    List<SistemaSolar> findByPoblacion(PlanetaEntity poblacion);
+    List<SistemaSolar> findByDiametroKm(PlanetaEntity diametroKm);    
 }
