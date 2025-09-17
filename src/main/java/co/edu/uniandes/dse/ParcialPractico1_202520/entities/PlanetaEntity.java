@@ -1,9 +1,22 @@
 package co.edu.uniandes.dse.ParcialPractico1_202520.entities;
-import lombok.Data;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 @Data
+@Entity
 public class PlanetaEntity {
     private String nombre;
-    private double poblacion;
-    private double diametroEnKM;
+    private Long poblacion;
+    private Double diametroKm;
+
+    @ManyToOne
+    @JoinColumn(name = "sistema_solar_id")
+    private SistemaSolar sistemaSolar;
 }
